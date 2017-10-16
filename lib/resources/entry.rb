@@ -2,7 +2,7 @@ module TimeCamp
   class Entry < TimeCamp::Resource
     attr_reader :id, :duration, :user_id, :description, :last_modify,
                 :billable, :task_id, :date, :start_time, :name, :addons_external_id,
-                :invoice_id, :started_at, :entry_id
+                :invoice_id, :started_at, :entry_id, :note
 
     def initialize(response)
       response.each { |k,v| instance_variable_set("@#{k.underscore}", v) }
@@ -55,5 +55,13 @@ module TimeCamp
       response = TimeCamp::Request.put(resource_name, opts, data)
       return EntryCollection.parse(response)
     end
+
+    def self.delete(opts={})
+      data_keys = [:id, :entry_id]
+      data, opts = opts.partition{ |k, v| data_keys.include?(k) }.map(&:to_h)
+      response = TimeCamp::Request.delete(resource_name, opts, data)
+      return EntryCollection.parse(response)
+    end
+
   end
 end

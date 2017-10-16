@@ -15,5 +15,9 @@ module TimeCamp
     def each(&block)
       return @resources.each(&block)
     end
+
+    def map(&block)
+      return @resources.map(&block)
+    end
   end
 end

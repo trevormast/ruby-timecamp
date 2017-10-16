@@ -7,7 +7,7 @@ module TimeCamp
     end
 
     def to_h
-      return JSON.parse(@response.body)
+      return @response.body.present? ? JSON.parse(@response.body) : @response.body
     end
   end
 end
