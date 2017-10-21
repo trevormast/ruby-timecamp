@@ -13,7 +13,7 @@ module TimeCamp
     def self.collection?(response)
       # return true if the response is an array
       # or if all of the keys are strings of digits only
-      return response.is_a?(Array) || response.keys.all?{ |key| key.scan(/\D/).empty? }
+      return response.is_a?(Array) || response.keys.all?{ |key| key.scan(/\D/).blank? }
     end
   end
 end
