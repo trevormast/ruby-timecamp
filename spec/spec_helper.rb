@@ -1,6 +1,10 @@
+# set ENV variable before requiring timecamp
+ENV['TIMECAMP_ENV'] = 'test'
+
+require_relative '../timecamp'
 require 'webmock/rspec'
 require 'vcr'
-require_relative '../timecamp'
+
 WebMock.disable_net_connect!(allow_localhost: true)
 
 VCR.configure do |c|
@@ -13,7 +17,6 @@ VCR.configure do |c|
     ENV['TIMECAMP_API_TOKEN']
   end
 end
-
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
