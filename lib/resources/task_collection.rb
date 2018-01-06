@@ -9,7 +9,6 @@ module TimeCamp
       return TimeCamp::TaskCollection.collection?(response) ? TaskCollection.new(response) : Task.new(response)
     end
 
-
     def self.collection?(response)
       # return true if the response is an array
       # or if all of the keys are strings of digits only
