@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.timecamp.com/third_party/api/tasks/format/json/api_token/<API_TOKEN>/
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.3p222
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - www.timecamp.com
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Date:
+      - Sat, 13 Jan 2018 04:05:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d904ab8cee250e074f5a146f482f0b61c1515816345; expires=Sun, 13-Jan-19
+        04:05:45 GMT; path=/; domain=.timecamp.com; HttpOnly
+      - ci_session=588b7ed154d2f3f01ebc4d4a8e6de741; expires=Sat, 13-Jan-2018 06:05:45
+        GMT; Max-Age=7200; path=/
+      - ci_session=dd85ab979dd14e3ddc633e407ba12409; expires=Sat, 13-Jan-2018 06:05:45
+        GMT; Max-Age=7200; path=/
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ''
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Content-Type, User-Agent, Authorization
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Content-Encoding:
+      - gzip
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 3dc57a9cdd167ffe-SAN
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+2Y3W6bMBSAX2Vit73ABwN27pK2vAZy4CxBczCyTbuqyrvP
+        CJxurraOSqugClfmszkHPh3hn+eIMJJTyuNo8xxZYb6XTR1tXuhN1AmNrR3x
+        cC+MaQ4t1uX+Kdq0vZQ3UStO6HorpSTqL0MUNw5/WNStkOUl6jj4wn8JPPZI
+        fEA5JB+y6OrYPKBPWimptGt/TehtRqkjVhyMA6617+sD2svQ8bbs28Y6clS9
+        No5qpWx50Krvxi9hcUr5MLqRUuwlTmlbZdG/TtfvZVOVR2GOHvUGXTRnioC7
+        kqE1oMnZyIZcEicUnc/jU6WoKjSmtE+dS0AdJZRRQjIIxHv6hviXbJP8b4i1
+        aOuD+m/qObvL72eoX6b1lCUMWBJY93R51necb4ti7dYpTyBJ8rDWJ7pA69lt
+        UaRrt55SSDjNwlqf6PKsF7CDLVu99YzFPGeh9Ykuz/rcKXWZ1inEkEJY657O
+        tq76tkZdCV1f59O/es+dX0LC5aOn7/RuruLfFA8cIMtD8Z4uUvwnWrxnLANG
+        0sC+p4u0D3db2O3WXvaEQxy/KntPFyn+E5V96tbrMQn3rJ7OOSxo8XG1JwXx
+        x1p3M6nTm5PfrV/oHOsWjV2j8Q+uc4gZQMppYNzTucbhqvwfFvBpniXpq+Ow
+        ic79sdvmhJU4dde96p+ln38CzTZihf4VAAA=
+    http_version: 
+  recorded_at: Sat, 13 Jan 2018 04:05:46 GMT
+recorded_with: VCR 3.0.3

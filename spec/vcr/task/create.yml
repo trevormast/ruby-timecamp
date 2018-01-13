@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.timecamp.com/third_party/api/tasks/format/json/api_token/<API_TOKEN>/
+    body:
+      encoding: UTF-8
+      string: name=test
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.3p222
+      Content-Length:
+      - '9'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - www.timecamp.com
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      Date:
+      - Sat, 13 Jan 2018 04:04:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '427'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d73456d9f1951fb5185a168e369b295771515816296; expires=Sun, 13-Jan-19
+        04:04:56 GMT; path=/; domain=.timecamp.com; HttpOnly
+      - ci_session=290b66c39f5658c5db32991365389aa1; expires=Sat, 13-Jan-2018 06:04:56
+        GMT; Max-Age=7200; path=/
+      - ci_session=367ba2a11f6517ef124afcf56310a2de; expires=Sat, 13-Jan-2018 06:04:56
+        GMT; Max-Age=7200; path=/
+      Access-Control-Allow-Origin:
+      - ''
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Content-Type, User-Agent, Authorization
+      Access-Control-Allow-Methods:
+      - POST, OPTIONS
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 3dc5796c6f0e8016-SAN
+    body:
+      encoding: UTF-8
+      string: '{"21130171":{"task_id":"21130171","parent_id":"0","name":"test","external_task_id":null,"external_parent_id":null,"level":"1","add_date":"2018-01-13
+        05:04:56","archived":"0","color":"#34C644","tags":"","budgeted":"0","checked_date":null,"root_group_id":"80549","assigned_to":null,"assigned_by":null,"due_date":null,"note":null,"context":null,"folder":null,"repeat":null,"billable":"1","budget_unit":"hours","public_hash":null}}'
+    http_version: 
+  recorded_at: Sat, 13 Jan 2018 04:04:57 GMT
+recorded_with: VCR 3.0.3

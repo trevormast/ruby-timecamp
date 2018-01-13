@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.timecamp.com/third_party/api/tasks/format/json/api_token/<API_TOKEN>/
+    body:
+      encoding: UTF-8
+      string: task_id=21130171&name=test2
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.3p222
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - www.timecamp.com
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Date:
+      - Sat, 13 Jan 2018 04:06:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d17fb153f02226629a83db9b18a251ff61515816362; expires=Sun, 13-Jan-19
+        04:06:02 GMT; path=/; domain=.timecamp.com; HttpOnly
+      - ci_session=7617d126e69f7e03c23522a2d8d0597f; expires=Sat, 13-Jan-2018 06:06:03
+        GMT; Max-Age=7200; path=/
+      - ci_session=7fca0bc19c6c6c67571ec25b586d23dd; expires=Sat, 13-Jan-2018 06:06:03
+        GMT; Max-Age=7200; path=/
+      Access-Control-Allow-Origin:
+      - ''
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Content-Type, User-Agent, Authorization
+      Access-Control-Allow-Methods:
+      - PUT, OPTIONS
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 3dc57b0b0ec97fb6-SAN
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA1RQ227DIAz9lensNZUgSbuO134IIsFLUBlEYKpO0/59iljS
+        7s0+Phfb32CTr9pZKLRSdkK+STRYTKLAFRZoEMwnQYEpc4sGdGdKwXi9i0Px
+        /gl/0teJpxt5KKzmxlptDa+GrZDng5AH2b2IoxK9Op5WQhpnd6MtfIw+Jii8
+        dv3l1PdowGbKUECDodiJ+EGdabzSZl+jU4yspxTLUu85i2P/vqbk7KZAVnPc
+        qDs0fG2QLfTPLcRHPcbAdOet/YjeUtpjaSGzzwbnvRk8/b2grq1LcAyFOZaU
+        16+XwbtRzybPVffzCwAA//8DABQmzmifAQAA
+    http_version: 
+  recorded_at: Sat, 13 Jan 2018 04:06:04 GMT
+recorded_with: VCR 3.0.3

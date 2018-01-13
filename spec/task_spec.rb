@@ -6,7 +6,7 @@ describe TimeCamp::Task do
       VCR.use_cassette('task/get') do
         tasks = TimeCamp::Task.get
         expect(tasks.class).to eq(TimeCamp::TaskCollection)
-        expect(tasks[0].instance_variables).to eq([:@task_id, :@parent_id, :@assigned_by, :@name, :@external_task_id, :@external_parent_id, :@level, :@archived, :@color, :@tags, :@budgeted, :@budget_unit, :@root_group_id, :@billable, :@note, :@public_hash, :@users, :@user_access_type])
+        expect(tasks[0].instance_variables).to include(:@task_id, :@parent_id, :@assigned_by, :@name, :@external_task_id, :@external_parent_id, :@level, :@archived, :@color, :@tags, :@budgeted, :@budget_unit, :@root_group_id, :@billable, :@note, :@public_hash, :@users, :@user_access_type)
       end
     end
   end

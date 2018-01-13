@@ -2,15 +2,13 @@ require 'spec_helper'
 
 describe TimeCamp::Entry do
   before do
-    @from = '2016-10-01'
-    @to = '2017-10-01'
+    @from = '2016-01-01'
+    @to = '2020-01-01'
   end
 
   describe ".get" do
     it "gets all entries" do
       VCR.use_cassette('entry/get_all') do
-        from = '2016-10-01'
-        to = '2017-10-01'
         entries = TimeCamp::Entry.get(from: @from, to: @to)
         expect(entries.class).to eq(TimeCamp::EntryCollection)
         expect(entries[0].class).to eq(TimeCamp::Entry)
@@ -49,18 +47,18 @@ describe TimeCamp::Entry do
       VCR.use_cassette('entry/update') do
         original_start_time = DateTime.parse(@last_entry.start_time)
         original_end_time = DateTime.parse(@last_entry.end_time)
-        updated_start_time = (original_start_time + 1.day).strftime('%Y-%m-%d')
-        updated_end_time = (original_end_time + 1.day).strftime('%Y-%m-%d')
+        @updated_start_time = (original_start_time + 1.hour).strftime('%H:%M:%S')
+        @updated_end_time = (original_end_time + 1.hour).strftime('%H:%M:%S')
 
-        entry = TimeCamp::Entry.update(id: @last_entry.id, start_time: updated_start_time, end_time: updated_end_time)
+        entry = TimeCamp::Entry.update(id: @last_entry.id, start_time: @updated_start_time, end_time: @updated_end_time)
         expect(entry.class).to eq(TimeCamp::Entry)
       end
 
       VCR.use_cassette('entry/get_updated') do
         updated_entries = TimeCamp::Entry.get(from: @from, to: @to)
         updated_entry = updated_entries.find(@last_entry.id)
-        expect(updated_entry.start_time).not_to eq(@last_entry.start_time)
-        expect(updated_entry.end_time).not_to eq(@last_entry.end_time)
+        expect(updated_entry.start_time).to eq(@updated_start_time)
+        expect(updated_entry.end_time).to eq(@updated_end_time)
       end
     end
   end
@@ -68,9 +66,7 @@ describe TimeCamp::Entry do
   describe '.delete' do
     before do
       VCR.use_cassette('entry/get_all') do
-        from = '2016-10-01'
-        to = '2017-10-01'
-        @entries = TimeCamp::Entry.get(from: from, to: to)
+        @entries = TimeCamp::Entry.get(from: @from, to: @to)
         @last_entry = @entries[-1]
       end
     end

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.timecamp.com/third_party/api/users/format/json/api_token/<API_TOKEN>/
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.3p222
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - www.timecamp.com
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Date:
+      - Sat, 13 Jan 2018 03:59:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df31ebfcbc49e101f74339dfd92bf91751515815968; expires=Sun, 13-Jan-19
+        03:59:28 GMT; path=/; domain=.timecamp.com; HttpOnly
+      - ci_session=a474df2e8e25792b21330f44f05e37cf; expires=Sat, 13-Jan-2018 05:59:28
+        GMT; Max-Age=7200; path=/
+      Access-Control-Allow-Origin:
+      - ''
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Content-Type, User-Agent, Authorization
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 3dc5716b7a608016-SAN
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA0zMWQrCMACE4auUeU4ki7FtnryHSAltqIEsJYtQxLtLEcTX
+        j3/m9sKaU9smt0BjYOo8gqAVm7/ChRBCgsAG4zw0arbPlIMp9boedJpTAIFP
+        q4vTnFqs0Ojl8LPqgoWGYHygjFMuOq40V5odr4srmzf7FM0RxeY9Qdnj/Pib
+        9ZQpKlnHRy2Vlhe87x8AAAD//wMAWhzhWLYAAAA=
+    http_version: 
+  recorded_at: Sat, 13 Jan 2018 03:59:30 GMT
+recorded_with: VCR 3.0.3
