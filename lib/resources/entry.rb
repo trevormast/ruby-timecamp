@@ -5,8 +5,12 @@ module TimeCamp
                 :invoice_id, :started_at, :entry_id, :note, :time_span
 
     def initialize(response)
-      response.each { |k,v| instance_variable_set("@#{k.underscore}", v) }
+      load_attributes(response)
     end
+
+    #################
+    # CLASS METHODS #
+    #################
 
     # Example GET response
     # [
@@ -63,5 +67,39 @@ module TimeCamp
       return EntryCollection.parse(response)
     end
 
+    ####################
+    # INSTANCE METHODS #
+    ####################
+
+    def update(attributes = {})
+      load_attributes(TimeCamp::Entry.update(attributes.merge(id: self.id)).attributes)
+    end
+
+
+    private
+
+      def load_attributes(response)
+        @id = response[:id]
+        @duration = response[:duration]
+        @user_id = response[:user_id]
+        @description = response[:description]
+        @last_modify = response[:last_modify]
+        @billable = response[:billable]
+        @task_id = response[:task_id]
+        @date = response[:date]
+        @start_time = response[:start_time]
+        @end_time = response[:end_time]
+        @name = response[:name]
+        @addons_external_id = response[:addons_external_id]
+        @invoice_id = response[:invoice_id]
+        @started_at = response[:started_at]
+        @entry_id = response[:entry_id]
+        @note = response[:note]
+        @time_span = response[:time_span]
+      end
+
+      def attributes
+        return Hash[instance_variables.map { |name| [name, instance_variable_get(name)] } ]
+      end
   end
 end
