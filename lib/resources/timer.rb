@@ -3,10 +3,11 @@ module TimeCamp
     attr_reader :new_timer_id, :entry_id, :isTimerRunning, :elapsed, :timer_id,
                 :start_time, :task_id, :name, :external_task_id, :entry_time
 
-    def initialize(response)
-      response.each { |k,v| instance_variable_set("@#{k.underscore}", v) }
-    end
+    #################
+    # CLASS METHODS #
+    #################
 
+    # override because the path for this resource is not plural for some reason
     def self.resource_name
       return 'timer'
     end
@@ -33,5 +34,19 @@ module TimeCamp
       response = TimeCamp::Request.post(resource_name, opts, data)
       return Timer.new(response)
     end
+
+    private
+      def load_attributes(response)
+        @new_timer_id = response[:new_timer_id]
+        @entry_id = response[:entry_id]
+        @is_timer_running = response[:isTimerRunning]
+        @elapsed = response[:elapsed]
+        @timer_id = response[:timer_id]
+        @start_time = response[:start_time]
+        @task_id = response[:task_id]
+        @name =response[:name]
+        @external_task_id = response[:external_task_id]
+        @entry_time = response[:entry_time]
+      end
   end
 end

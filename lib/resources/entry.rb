@@ -1,12 +1,8 @@
 module TimeCamp
   class Entry < TimeCamp::Resource
     attr_reader :id, :duration, :user_id, :description, :last_modify,
-                :billable, :task_id, :date, :start_time, :end_time, :name, :addons_external_id,
+                :billable, :task_id, :date, :start_time, :start_time_hour, :end_time, :end_time_hour, :name, :addons_external_id,
                 :invoice_id, :started_at, :entry_id, :note, :time_span
-
-    def initialize(response)
-      load_attributes(response)
-    end
 
     #################
     # CLASS METHODS #
@@ -71,11 +67,6 @@ module TimeCamp
     # INSTANCE METHODS #
     ####################
 
-    def update(attributes = {})
-      load_attributes(TimeCamp::Entry.update(attributes.merge(id: self.id)).attributes)
-    end
-
-
     private
 
       def load_attributes(response)
@@ -88,7 +79,9 @@ module TimeCamp
         @task_id = response[:task_id]
         @date = response[:date]
         @start_time = response[:start_time]
+        @start_time_hour = response[:start_time_hour]
         @end_time = response[:end_time]
+        @end_time_hour = response[:end_time_hour]
         @name = response[:name]
         @addons_external_id = response[:addons_external_id]
         @invoice_id = response[:invoice_id]
@@ -98,8 +91,5 @@ module TimeCamp
         @time_span = response[:time_span]
       end
 
-      def attributes
-        return Hash[instance_variables.map { |name| [name, instance_variable_get(name)] } ]
-      end
   end
 end
