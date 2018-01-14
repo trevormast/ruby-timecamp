@@ -35,6 +35,10 @@ module TimeCamp
       return Timer.new(response)
     end
 
+    ####################
+    # INSTANCE METHODS #
+    ####################
+
     private
       def load_attributes(response)
         @new_timer_id = response[:new_timer_id]

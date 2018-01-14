@@ -5,9 +5,9 @@ module TimeCamp
                 :budget_unit, :root_group_id, :billable, :note, :public_hash, :users,
                 :user_access_type
 
-    def initialize(response)
-      response.each { |k,v| instance_variable_set("@#{k.underscore}", v) }
-    end
+    #################
+    # CLASS METHODS #
+    #################
 
     # optional :task_id
     def self.get(opts={})
@@ -36,5 +36,31 @@ module TimeCamp
       response = TimeCamp::Request.put(resource_name, opts, data)
       return TaskCollection.parse(response)
     end
+
+    ####################
+    # INSTANCE METHODS #
+    ####################
+
+    private
+      def load_attributes(response)
+        @task_id = response[:task_id]
+        @parent_id = response[:parent_id]
+        @assigned_by = response[:assigned_by]
+        @name = response[:name]
+        @external_task_id = response[:external_task_id]
+        @external_parent_id = response[:external_parent_id]
+        @level = response[:level]
+        @archived = response[:archived]
+        @color = response[:color]
+        @tags = response[:tags]
+        @budgeted = response[:budgeted]
+        @budget_unit = response[:budget_unit]
+        @root_group_id = response[:root_group_id]
+        @billable = response[:billable]
+        @note = response[:note]
+        @public_hash = response[:public_hash]
+        @users = response[:users]
+        @user_access_type = response[:user_access_type]
+      end
   end
 end
