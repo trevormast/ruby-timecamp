@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'activesupport'
-gem 'rest-client'
+# gem 'activesupport'
+# gem 'rest-client'
 
-gem 'pry'
+# gem 'pry'
 
-gem 'httplog'
+# gem 'httplog'
 
-gem 'rspec'
-gem 'vcr'
-gem 'webmock'
+# gem 'rspec'
+# gem 'vcr'
+# gem 'webmock'
+
+gemspec
