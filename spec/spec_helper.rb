@@ -1,7 +1,7 @@
 # set ENV variable before requiring timecamp
 ENV['TIMECAMP_ENV'] = 'test'
 
-require_relative '../timecamp'
+require_relative '../lib/ruby-timecamp'
 require 'webmock/rspec'
 require 'vcr'
 
